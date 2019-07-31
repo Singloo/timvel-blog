@@ -133,7 +133,9 @@ from(arr)
 //start
 // 1.01s  5
 // COMPLETE
+```
 
+```javascript
 LOG_TIME();
 from(arr)
   .pipe(concatMap(x => normalPromise(x, 1000)))
@@ -145,7 +147,9 @@ from(arr)
 // 4.01s  4
 // 5.01s  5
 // COMPLETE
+```
 
+```javascript
 LOG_TIME();
 from(arr)
   .pipe(mergeMap(x => normalPromise(x, 1000)))
@@ -158,7 +162,6 @@ from(arr)
 // 1.01s  5
 // COMPLETE
 ```
-
 有没有悟到点什么? 还需要我过多解释吗?
 `switchMap`, 监听最新的`observable`的值, 如果当前`observable`还没发出值, 而下一个`observable`已经到来
 那就转而监听下一个`observable`, 永远监听最新的`observable`
@@ -218,7 +221,6 @@ from(arr)
 但是更多的`operator`,还请查阅官方文档, 或者第三方文档
 
 `forkJoin`是一个常用的`operator`,它会等到输入的`observable`都完成后,返回各个`observable`最后发出的值
-
 ```javascript
 const arrOfPromises = [
   normalPromise('1'),
@@ -229,7 +231,9 @@ const arrOfPromises = [
 
 forkJoin(arrOfPromises).subscribe(SUBSCRIBE());
 //NEXT [ '1', '2', '3', '4' ]
+```
 
+```javascript
 forkJoin([
   interval(100).pipe(take(3)),
   timer(2000),
@@ -243,6 +247,7 @@ forkJoin(
 //NEXT [ 2, 0, 1 ]
 ```
 
+
 `race`, promise 也有`race`,这就比较好理解了,只取最先发出的值
 
 ```javascript
@@ -250,7 +255,7 @@ race([normalPromise(1, 1000), normalPromise(2, 500)]).subscribe(SUBSCRIBE());
 //NEXT 2
 ```
 
-下面给一些例子, 都是我平时写的一些 script, 代码是肯定跑不了的,我会解释下每一步做了什么,
+下面给的一些例子, 都是我平时写的一些 script, 代码是肯定跑不了的,我会解释下每一步做了什么,
 希望各位能够在这些例子中顿悟
 当然我这边的例子嵌套还是有点深的,毕竟写的也比较快,二来,也没有见过什么优秀的例子.
 
@@ -267,8 +272,10 @@ range(0, 28)
       from(queryUser(skip)).pipe(
         // tap 里面可以执行一些side effect, 返回的值不会影响
         tap(datas => (skip += datas.length)),
+        // Array<object>
         // 这里把array, 转成一个个的值, 你应该知道from(Array)会发生什么
         switchMap(datas => from(datas)),
+        // object
         // map, 你也应该知道map会做哪些事
         map(data => data.toJSON()),
         map(data => ({
@@ -283,10 +290,12 @@ range(0, 28)
         })),
         // bufferCount, 取100个值, 转成array, 这里主要为了控制并发,每次处理100个数据
         bufferCount(100),
+        // Array<object>
         // concatMap, 当前面100个数据处理完后,才会处理后面的
         concatMap(datas =>
           // 这里把array转成单个数据
           from(datas).pipe(
+            // object
             // mergeMap, 同时处理这100个数据
             mergeMap(data =>
               // forkJoin, 等着3个promise处理完成后,同时返回数据,这3个promise都返回的object,不必在意里面的数据结构
@@ -295,6 +304,7 @@ range(0, 28)
                 from(queryPaymentsTimes(data.user_id)),
                 from(queryZhUserInfo(data.user_id)),
               ).pipe(
+                // Array<object>
                 // 将返回的数据,连同上面的object,变成1个object
                 map(d =>
                   d.reduce(
@@ -307,6 +317,7 @@ range(0, 28)
                 ),
               ),
             ),
+            // object
             // tap...print一下数据
             tap(data => console.log(data.user_id, 'data got')),
             // mergeMap 执行下一个promise, 不关心先后,
@@ -348,6 +359,7 @@ from(
     map(ids => ids.flat()),
     map(ids => ids.map(o => +o)),
     map(ids => uniq(ids)),
+    // Array<number>
     //从promise中获取一些数据, 这个promise只有一个next, 所以我使用swicthMap
     //如果你的observable会有多个next, 那你需要注意, 如果你使用switchMap, 会出现前一个observable还未发出数据
     //而下一个next已经到来的情况, 这时候前面一个observable会被顶掉
@@ -366,12 +378,15 @@ from(
       ),
     ),
     map(dbResultMap),
+    // Array<object>
     // 同样的,把array变成一个个的值发出
     switchMap(data => from(data)),
+    // object
     // filter,这是第一次出现, 只有返回true的值会发出
     filter(o => /video|audio/.test(o.lesson_type)),
     // buffer, 并发控制, 一次处理5个, 我怕把数据库搞挂掉, 还是温柔点好
     bufferCount(5),
+    // Array<object>
     // concat, 等前面5个处理完, 才继续处理下面5个
     concatMap(datas =>
       // merge, 这里的merge,相当于 from(datas).pipe(
