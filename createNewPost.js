@@ -19,6 +19,9 @@ const getParam = paramName => {
   return minimist(process.argv)[paramName];
 };
 
+//how to use it?
+// run `node createNewPost.js --title my-title --tag my,tag`
+
 (function() {
   const title = getParam('title');
   const tags = getParam('tag').split(',');
@@ -35,7 +38,7 @@ const getParam = paramName => {
     .replace(',', '');
 
   let output = template
-    .replace(/(?<=title: )\w+\b/, title.replace('-', ' '))
+    .replace(/(?<=title: )\w+\b/, title.replace(/-/g, ' '))
     .replace(/- Tag/, tags.map(tag => '- ' + tag).join('\n\t'))
     .replace(/(?<=date: )\w+\b/, currentDate);
   fs.writeFileSync(getOutputPath(title), output, 'utf8');
