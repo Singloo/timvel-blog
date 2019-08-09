@@ -123,7 +123,7 @@ from(arr)
 
 当然,这里你使用`mergeMap`,`concatMap`也会得到同样的结果
 
-三者区别
+#### 三者区别
 
 ```javascript
 LOG_TIME();
@@ -549,7 +549,7 @@ range(0, 50)
   });
 ```
 如果你大多数使用rxjs的场景是处理promise, 那么也只是使用`map`,`swichMap`,`mergeMap`,`concatMap`,`from`...而已
-无非是嵌套的都多深,pipeline有多长罢了
+无非是嵌套的有多深,pipeline有多长罢了
 其他的`operator`,都可以自己去跑一跑,看看会发生什么,输出这样的值
 这也一直是我的学习方法,写一写代码,看看跑出来的结果是什么
 
