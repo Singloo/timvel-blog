@@ -38,7 +38,10 @@ const getParam = paramName => {
     .replace(',', '');
 
   let output = template
-    .replace(/(?<=title: )\w+\b/, title.replace(/-/g, ' '))
+    .replace(
+      /(?<=title: )\w+\b/,
+      title.replace(/-/g, ' ').replace(/^[a-z]/, v => v.toUpperCase()),
+    )
     .replace(/- Tag/, tags.map(tag => '- ' + tag).join('\n\t'))
     .replace(/(?<=date: )\w+\b/, currentDate);
   fs.writeFileSync(getOutputPath(title), output, 'utf8');

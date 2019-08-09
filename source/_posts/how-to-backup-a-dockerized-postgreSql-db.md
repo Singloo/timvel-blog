@@ -1,8 +1,12 @@
 ---
-title: how to backup a dockerized postgreSql db
+title: How to backup a dockerized postgreSql db
 date: 2019-8-1 9:27:27 AM
 tags:
   - postgresql
+  - docker
+  - rxjs
+  - typescript
+  - nodeJs
 cover: https://source.unsplash.com/random/800x500
 ---
 
