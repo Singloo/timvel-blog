@@ -12,9 +12,12 @@ cover: https://source.unsplash.com/random/800x500
 > https://mp.weixin.qq.com/s/Cxx61G0HofOTnwn9f_r5Vg
 > https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
+> 第二个例子
+> https://github.com/Singloo/clean-architecture-demo
 
 > 具体实现,请查看项目`modules`目录下, 有个简单例子
 > https://github.com/Singloo/timvel
+
 
 我最后的文件结构大致如此
 - template
@@ -29,9 +32,9 @@ cover: https://source.unsplash.com/random/800x500
 	- types
     	- index.ts
 	- viewModel
+        - viewModel.tsx
     	- components
         	- functional.tsx
-      	- viewModel.tsx
 
 
 大概讲下每个文件都做什么
