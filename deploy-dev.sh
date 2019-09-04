@@ -1,1 +1,1 @@
-rsync -avzP public/* root@timvel-hk-1:/apps/timvel-blog/public
+rsync -avzP public/* root@timvel-tokyo-1:/apps/timvel-blog/public

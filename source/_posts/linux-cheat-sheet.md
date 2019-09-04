@@ -16,6 +16,11 @@ download a directory from linux server
 scp -r root@xx.xxx.xxx:/path/to/server /path/to/local
 ```
 
+## Upload file to linux server
+```
+scp /path/to/file root@xx.xxx.xx:/path/to/server
+```
+
 ## See size of file
 ```bash
 ls -lh [path/to/file]
@@ -66,3 +71,13 @@ du -h path/to/directory
 
 `-c` If the -c option is present, then commands are read from string.
 <br/>If there are arguments after the string, they are assigned to the positional parameters, starting with $0.
+
+## reload sshd service
+> sudo service sshd reload
+> sudo service ### command
+
+## as root user
+> sudo -i / sudo su -i
+
+## set password for root
+> sudo passwd root

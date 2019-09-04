@@ -34,3 +34,8 @@ terminate query
 ```
 SELECT pg_terminate_backend(pid)
 ```
+
+## restore db from .sql file
+```
+psql -U username -d database -f /path/to/file
+```
