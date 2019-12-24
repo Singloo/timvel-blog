@@ -81,3 +81,6 @@ du -h path/to/directory
 
 ## set password for root
 > sudo passwd root
+
+## check size of folder
+> du -h --max-depth=1
