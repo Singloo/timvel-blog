@@ -6,7 +6,7 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "build": "hexo clean && hexo deploy"
+    "build": "hexo clean && hexo deploy && sh deploy-dev.sh && sh deploy-production.sh"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
