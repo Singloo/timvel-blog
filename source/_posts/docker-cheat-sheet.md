@@ -45,3 +45,26 @@ networks:
 ```bash
 docker network disconnect --force bridge SOME_CONTAINER
 ```
+
+
+## docker network
+
+Sometimes when kill a container, docker not automatically disconnect from network or stop listening some ports.
+We need to disconnect those container manually
+
+```bash
+docker network ls
+
+docker network inspect {network}
+```
+
+Now we can see the active containers
+
+disconnect container from network
+
+```bash
+docker network disconnect -f {network} {endpoint-name}
+docker network rm {network}
+```
+
+
