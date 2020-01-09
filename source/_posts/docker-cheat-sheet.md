@@ -40,3 +40,8 @@ networks:
   backend:
 
 ```
+
+## unlink a container from network
+```bash
+docker network disconnect --force bridge SOME_CONTAINER
+```
