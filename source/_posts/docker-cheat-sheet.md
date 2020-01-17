@@ -68,3 +68,15 @@ docker network rm {network}
 ```
 
 
+## display container resource usage
+```bash
+docker stats --no-stream
+```
+flags
+
+name | default | description
+--- | --- | ---
+--all , -a | | Show all containers (default shows just running)
+--format	|	| Pretty-print images using a Go template
+--no-stream	|	| Disable streaming stats and only pull the first result
+--no-trunc	| | Do not truncate output
