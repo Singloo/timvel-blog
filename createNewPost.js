@@ -45,4 +45,5 @@ const getParam = paramName => {
     .replace(/- Tag/, tags.map(tag => '- ' + tag).join('\n\t'))
     .replace(/(?<=date: )\w+\b/, currentDate);
   fs.writeFileSync(getOutputPath(title), output, 'utf8');
+  console.log('DONE');
 })();
