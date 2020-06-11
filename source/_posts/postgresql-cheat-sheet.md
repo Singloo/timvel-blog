@@ -7,7 +7,7 @@ cover: https://source.unsplash.com/random/800x500
 ---
 
 ## Backup database
-```
+```sql
 pg_dump -f path/to/file -U username -h 0.0.0.0 -p 5432
 ```
 or define environment variables 
@@ -36,6 +36,17 @@ SELECT pg_terminate_backend(pid)
 ```
 
 ## restore db from .sql file
-```
+```sql
 psql -U username -d database -f /path/to/file
+```
+
+
+## set next sequence id to max id of the table
+```sql
+-- Get Max ID from table
+SELECT MAX(id) FROM table;
+-- Get Next ID from table
+SELECT nextval('table_id_seq');
+-- Set Next ID Value to MAX ID
+SELECT setval('table_id_seq', (SELECT MAX(id) FROM table));
 ```

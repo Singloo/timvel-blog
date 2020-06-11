@@ -84,3 +84,10 @@ du -h path/to/directory
 
 ## check size of folder
 > du -h --max-depth=1
+
+## check server time
+> date -R
+
+## change timezone
+> tzselect
+> cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
