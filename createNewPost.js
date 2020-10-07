@@ -11,23 +11,38 @@
 const fs = require('fs');
 const path = require('path');
 const minimist = require('minimist');
+require('dotenv').config({ path: path.join(__dirname, 'blog.env') });
+global.fetch = require('node-fetch');
+const Unsplash = require('unsplash-js').default;
+const toJson = require('unsplash-js').toJson;
+
+const unsplash = new Unsplash({
+  accessKey: process.env['UNSPLASH_ACCESS_KEY'],
+  secret: process.env['UNSPLASH_SECRET_KEY'],
+});
+
 const template = fs.readFileSync('./template.md', 'utf8');
-const getOutputPath = filename => {
+const getOutputPath = (filename) => {
   return path.join(__dirname, './source/_posts', filename + '.md');
 };
-const getParam = paramName => {
+const getParam = (paramName) => {
   return minimist(process.argv)[paramName];
 };
 
+const getRandomPhotoUrl = async () => {
+  const res = await toJson(await unsplash.photos.getRandomPhoto());
+  return res.urls.regular;
+};
 //how to use it?
 // run `node createNewPost.js --title my-title --tag my,tag`
 
-(function() {
+(async function () {
+  const imageUrl = await getRandomPhotoUrl();
   const title = getParam('title');
   const tags = getParam('tag').split(',');
   const currentDate = new Date()
     .toLocaleString()
-    .replace(/\d+\/\d+\/\d+/, res => {
+    .replace(/\d+\/\d+\/\d+/, (res) => {
       const _res = res.split('/').reverse();
       const mon = _res[2];
       const day = _res[1];
@@ -40,10 +55,12 @@ const getParam = paramName => {
   let output = template
     .replace(
       /(?<=title: )\w+\b/,
-      title.replace(/-/g, ' ').replace(/^[a-z]/, v => v.toUpperCase()),
+      title.replace(/-/g, ' ').replace(/^[a-z]/, (v) => v.toUpperCase()),
     )
-    .replace(/- Tag/, tags.map(tag => '- ' + tag).join('\n\t'))
-    .replace(/(?<=date: )\w+\b/, currentDate);
+    .replace(/- Tag/, tags.map((tag) => '- ' + tag).join('\n\t'))
+    .replace(/(?<=date: )\w+\b/, currentDate)
+    .replace('{{URL}}', imageUrl);
+
   fs.writeFileSync(getOutputPath(title), output, 'utf8');
   console.log('DONE');
 })();
