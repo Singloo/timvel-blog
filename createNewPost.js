@@ -23,7 +23,8 @@ const unsplash = new Unsplash({
 
 const template = fs.readFileSync('./template.md', 'utf8');
 const getOutputPath = (filename) => {
-  return path.join(__dirname, './source/_posts', filename + '.md');
+  const date = new Date().toLocaleDateString().replace(/\//g, '-');
+  return path.join(__dirname, './source/_posts', date + '-' + filename + '.md');
 };
 const getParam = (paramName) => {
   return minimist(process.argv)[paramName];
