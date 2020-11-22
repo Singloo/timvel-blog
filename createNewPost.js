@@ -37,7 +37,9 @@ const getRandomPhotoUrl = async () => {
 // run `node createNewPost.js --title my-title --tag my,tag`
 
 (async function () {
+  console.log('Getting random image...');
   const imageUrl = await getRandomPhotoUrl();
+  console.log('Image got');
   const title = getParam('title');
   const tags = getParam('tag').split(',');
   const currentDate = new Date()
