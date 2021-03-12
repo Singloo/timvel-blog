@@ -19,7 +19,7 @@ cover: https://images.unsplash.com/photo-1615224571885-7802e8b86d1b?crop=entropy
 禁止中国出口, 恐怕应该担心的是全世界. 很多中国人甚至对中国一无所知.
 
 <img
-src='../img/2021/03-11-1.jpeg'
+src='/img/2021/03-11-1.jpeg'
 width=320
 />
 
@@ -61,36 +61,37 @@ width=320
 我打开Twitter的时候, 大多数情况下, 我都能看见关于中国的新闻被置顶. 这是对所有用户的推送呢? 还是对指定IP的用户推送? 我关注列表都是机器学习的专家, 科学博主, 我喜欢的歌手, 还有白宫. 至少和我的浏览习惯是毫不相干的. 这不过是国家宣传机器的一部分罢了.
 
 <img
-src='../img/2021/03-11-2.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-3.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-4.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-5.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-6.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-7.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-8.jpeg'
-width=320
-/>
-<img
-src='../img/2021/03-11-9.jpeg'
-width=320
+src='/img/2021/03-11-2.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-3.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-4.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-5.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-6.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-7.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-8.jpeg'
+width=300
+style='display:inline; margin-left:20px'
+/><img
+src='/img/2021/03-11-9.jpeg'
+width=300
+style='display:inline; margin-left:20px'
 />
 
 
