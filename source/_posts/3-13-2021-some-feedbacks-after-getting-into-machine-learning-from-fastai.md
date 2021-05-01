@@ -20,14 +20,14 @@ cover: https://images.unsplash.com/photo-1614348531618-82d0648c5f16?crop=entropy
 
 事实上就以深度学习来说, 真正能做到创新的人还是很少的, 能够使用他人的提出的方法已经足够应付多数工业界的场景了.
 
-> ### 为什么要学习deep learning以及真正门槛
+> #### 为什么要学习deep learning以及真正门槛
 
 机器学习, 深度学习, 神经网络, 当然以及更吓人的名头: 人工智能. 这是一个自计算机诞生不久就产生的概念, 但也是一个相当新的领域. </br>
 用代码编程, 是十分直白的, 可解释的, 有逻辑的, 并且可以解决很多问题. 但是用代码怎么去区分猫狗? 这类对于人类来说很简单的问题, 如果翻译成代码却无从下手, 因为猫狗都有两只耳朵, 4条腿, 眼睛, 胡须, 尾巴. 基于特征的面向对象编程显然难以实现这个归类的任务. 但是机器学习可以做到, 用最简单的线性方程, 也能得到还可以的结果. 并且对于一些模型和调参的trick, 人们都不能很好的解释为什么起作用. 
 
 这是一个全新的领域, 是一个黑盒, 基于生活经验得到的方法能改善结果, 我想这些理由就足够了, 我喜欢在黑暗中探索. 通常最底层的组成部分往往拥有极大的能量, 原子是, 数字也应该是. 所有机器学习的可能性是值得期待的, 参与到这个浪潮中, 哪怕只是使用别人发明的工具, 仅仅是体验到人类最前沿的研究, 也足以让人兴奋.
 
-> ### 你需要准备的
+> #### 你需要准备的
 
 1. 对于系统的基本知识, 无需精通, 只需要能够使用shell指令, 对不同环境下出现的问题进行debug. 设置环境是第一步, 虽然fastai介绍了很多预设好的, 仅针对fastai课程的网站.
 
@@ -49,7 +49,20 @@ In 2020, fastai introduced course version 4 along with fastbook. Beginners will 
 So what you will get from this course? Jeremy talked a lot about those famous fastai students. They got a greate achievement in different domain. And I believe there are more students who even not finish course. But what will a average student like me will get? As for me, I know the basic usage of those fine tuning methods. I know how to train a model. I can train a model with state-of-the-art result if there's no problem with data. I can run those open source projects(Pytorch), and take advantage of them. At current stage, I can only use these tools to solve problems and highly rely on fastai apis.
 
 
-> ### Why should you learn deep learing and the true threhold of it
+> #### Why should you learn deep learing and the true threhold of it
 
 Machine learning, deep learning, neural network, of course the scaring jargon: Artifical Intelligence. This is a concept around since computer been invented, but still a new field.
 
+Code with programming language is quite straightforward, explainable and logical. It's already able to solve a lot of problems, but how to discriminate dogs and cats with code? This is not even a problem for humans, but when comes to code, it seems no way to start. They both have 2 ears, 4 legs, eyes, beards and tail. Object-oriented languages are mostly based on features, it's hard to handle this classification task. But with ML, this can be done easily. Even just several linear function can provide a nice result.
+
+This a new field, a black box, some tricks based on life experience can improve result. I think these reasons are enough, I like exploring in darkness. Usually the lowest components contain ennormous energy, atoms are, and the numbers should be. The possibilities of ML are worthy to expect, so join this tendency, it's exciting enough even just use tools people built, or experience the cutting edge results of reserchers.
+
+> #### What you need to prepare are
+
+1. basic knowledge about system, some shell, just need to familiar with system, make sure you can debug when setting up the environment
+
+2. fluent python
+
+3. Some mathematics, and some spatial imagination.
+
+4. around 200 hours of GPU. Besides the lessons, you may want to try some ideas.
