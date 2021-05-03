@@ -23,8 +23,15 @@ const unsplash = new Unsplash({
 
 const template = fs.readFileSync('./template.md', 'utf8');
 const getOutputPath = (filename) => {
-  const date = new Date().toLocaleDateString().replace(/\//g, '-');
-  return path.join(__dirname, './source/_posts', date + '-' + filename + '.md');
+  const date = new Date();
+  const year = date.getFullYear().toString().substring(2);
+  let month = (date.getMonth() + 1).toString();
+  month = month.length === 1 ? '0' + month : month;
+  pth = path.join(__dirname, './source/_posts', year + '-' + month);
+  if (!fs.existsSync(pth)) {
+    fs.mkdirSync(pth);
+  }
+  return path.join(pth, filename + '.md');
 };
 const getParam = (paramName) => {
   return minimist(process.argv)[paramName];
