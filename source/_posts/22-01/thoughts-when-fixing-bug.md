@@ -32,4 +32,4 @@ ok, 那现在的情况就是网上没有相关解决办法, 必须自己解决�
 
 terminal查下gcc版本, 4.9, 网上搜下gcc最新版本, 10. ok, 那可能就是gcc的问题了. 用`homebrew`安装最新的gcc, 为避免对其他xcode,apple服务造成破坏, 用`alias gcc = 'gcc-10'`测试, clean下缓存, 运行`flutter run`,成功了.   
 
-到这里bug修完了,是因为gcc版本造成的问题, xcode一向用的gcc4, 好像直接也遭遇过类似的问题.
+到这里bug修完了,是因为gcc版本造成的问题, xcode一向用的gcc4, 好像之前也遭遇过类似的问题.
