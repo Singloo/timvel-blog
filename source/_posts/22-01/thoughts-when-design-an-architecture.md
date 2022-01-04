@@ -35,20 +35,22 @@ cover: https://images.unsplash.com/photo-1639378117397-96c5e9d4cc66?crop=entropy
 ---
 #### 描述下`Controller`
 > `Controller`因`View`而存在, 用于链接`View`和`Service`. 同时也负责在`View`的生命周期内监听事件, 调用`Service`.  
-> e.g.一个Counter的例子, `View`中有个Button, 点击事件调用`Controller.onPressButton`,`Controller`调用`Service.increaseCounter`,`service`中调用`Store.increase`,`Store`修改count,`View`接收到count变化,更新页面.
+> e.g.一个Counter的例子, `View`中有个Button, 点击事件调用`Controller.onPressButton`,`Controller`调用`Service.increaseCounter`,`Service`中调用`Store.increase`,`Store`修改count,`View`接收到count变化,更新页面.
 ---
 #### 描述下`Service`
 > `Service`是一个`Module`所有业务逻辑的集合, 持有这个`Module`的`Store`, 也可以有全局`Service`. 如果业务逻辑过于复杂,可以将`Service`进行拆分.  
 `Service`可以访问任何`Store`, 任何其他`Service`, 但涉及对其他`Store`的修改, 则应通过调用其他`Service`实现.  
 对于与`View`绑定的event调用, `Service`可以主动发起, 若是处理event调用, 则只实现逻辑, 由`Controller`负责监听.
+
 ---
 #### 既然`Service`之间可以随意调用, 为什么还要强调属于某个`Module`, 而不直接分离出来, 变成全局?
 > 为避免随着业务增长, 逻辑混乱, 导致新增业务写在这个`Service`中可以, 那个`Service`中也行. 与`Module`绑定是为了使所有发生在这个`Module`中的新增业务逻辑, 都写在这个`Service`中. 尽管`Service`之间可随意调用.  
 当然全局`Service`和`Store`也可以存在.
+
 ---
 #### 为什么和`View`特性有关的(比如生命周期)调用要通过`Event`发起?
 > `View A`如果通过调用`Controller A.Service A`,然后在`Service A`中调用`Service B.XXX`, 那么这种调用是确定的, 一定会发生的, 并且`View A`是期待调用是成功的.   
-但事实上, 这种调用属于,`View B`委托`View A`发出调用, `View A`不应受后续调用影响,也不关心调用结果. 因此event调用也更具灵活性, 考虑到团队沟通的不实时性,`View B`也可以在不需要时主动放弃监听event. 而`View A`可以延后放弃发出event.
+> 但事实上, 这种调用属于,`View B`委托`View A`发出调用, `View A`不应受后续调用影响,也不关心调用结果. 因此event调用也更具灵活性, 考虑到团队沟通的不实时性,`View B`也可以在不需要时主动放弃监听event. 而`View A`可以延后放弃发出event.
 ---
 #### 描述几个跨`Module`调用的例子.  
 > 1. `View A`需要使用`View B`的`Store`  
@@ -66,10 +68,12 @@ cover: https://images.unsplash.com/photo-1639378117397-96c5e9d4cc66?crop=entropy
 > 5. `Service A`需要在`View B`关闭时执行一些方法  
 `Controller A`: listen('view B did close', `Service A.handler`)  
 `View B`的生命周期函数中: `Controller B.service B.onViewClose`: triggerEvent('view B did close')
+
 --- 
 #### 描述下初始化过程
 > `Store`先初始化  
 > `View`初始化时, `Controller`也初始化, 传入`Module`所属`Service`, `Service`初始化, 传入可修改控制的`Store`.
+
 ---
 #### `Service A`调用`Service B`, 但`View B`未初始化, 全局不存在`Store B`
 > 初始化一个新的`Store B`, 初始化`Service B`, 传入`Store B`. 此时应知道, `View B`不存在, 即使调用的某些方法修改了`Store B`, 也不会有任何UI发生变化. 如果是提前获取数据, 然后初始化`View B`, 则自行做相应处理. 
@@ -78,9 +82,13 @@ cover: https://images.unsplash.com/photo-1639378117397-96c5e9d4cc66?crop=entropy
 > 用Delegate, 或者封装一个class,把`View`传进去,再把class的instance依次传给`Controller`,`Service`,在`Service`中调用. 调用时应做空处理, 只有存在时才进行调用, 不存在则跳过, 不应影响其他逻辑.
 --- 
 ### 一些示例图片
-<img src=/img/2022/1/archi.png width=300/>
-<img src=/img/2022/1/example1.png width=300/>
-<img src=/img/2022/1/example2.png width=300/>
+<img src=/img/2022/1/archi.png width=400/>
+
+--- 
+<img src=/img/2022/1/example1.png width=400/>
+
+---
+<img src=/img/2022/1/example2.png width=400/>
 
 ## DEPRECATED
 ~~如果app只有单个页面, 问题总是简单的, 为避免文件过长,自然而然的可以想到把一个页面分成3部分`View`, `Controller`,`Model`.~~  
