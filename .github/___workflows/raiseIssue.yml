@@ -23,4 +23,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GRIDEA }}
         run: |
-          GITHUB_TOKEN=${GITHUB_TOKEN} python scripts/raiseIssue.py
+          GITHUB_TOKEN=${GITHUB_TOKEN} python script/raiseIssue.py
