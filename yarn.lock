@@ -90,16 +90,14 @@ agentkeepalive@^3.4.1:
   dependencies:
     humanize-ms "^1.2.1"
 
-ali-oss@^6.10.0:
-  version "6.10.0"
-  resolved "https://registry.yarnpkg.com/ali-oss/-/ali-oss-6.10.0.tgz#9b6d61586259851d3f7e33ae9e2ed58e77e5257e"
-  integrity sha512-kWguelLe4QZCvqisN3i9i+kyaG2JCj+4AqXbc+HKJ3b4WYwkn2hS9INJHtrUSlo95yn9FKSNXwTAfLMrXyQlnA==
+ali-oss@^6.17.0:
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/ali-oss/-/ali-oss-6.17.0.tgz#74c2d0d4697122d31b4dc83533846317344f8224"
+  integrity sha512-T9ma+G1/gQj0c/tkgSpXh2dqU4CPXHICh7TAdhxYiIPdkx+tX24k721dCMDonyJmiQkkWar1z4t76yrDqv09kA==
   dependencies:
     address "^1.0.0"
     agentkeepalive "^3.4.1"
-    any-promise "^1.3.0"
     bowser "^1.6.0"
-    co-defer "^1.0.0"
     copy-to "^2.0.1"
     dateformat "^2.0.0"
     debug "^2.2.0"
@@ -109,7 +107,7 @@ ali-oss@^6.10.0:
     humanize-ms "^1.2.0"
     is-type-of "^1.0.0"
     js-base64 "^2.5.2"
-    jstoxml "^0.2.3"
+    jstoxml "^2.0.0"
     merge-descriptors "^1.0.1"
     mime "^2.4.5"
     mz-modules "^2.1.0"
@@ -323,11 +321,6 @@ chokidar@^3.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-co-defer@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/co-defer/-/co-defer-1.0.0.tgz#3e4a787a8eed6b0a21ee287c094f7e8de0d3c818"
-  integrity sha1-Pkp4eo7tawoh7ih8CU9+jeDTyBg=
-
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -502,11 +495,12 @@ dateformat@^2.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.2.0.tgz#4065e2013cf9fb916ddfd82efb506ad4c6769062"
   integrity sha1-QGXiATz5+5Ft39gu+1Bq1MZ2kGI=
 
-debug@*:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+debug@*, debug@4, debug@^4.1.1:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
+  integrity sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
   dependencies:
-    ms "^2.1.1"
+    ms "2.1.2"
 
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.6.9:
   version "2.6.9"
@@ -520,13 +514,6 @@ debug@3.1.0, debug@~3.1.0:
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
-
-debug@4, debug@^4.1.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
-  integrity sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
-  dependencies:
-    ms "2.1.2"
 
 debug@^3.1.0:
   version "3.2.6"
@@ -1459,10 +1446,10 @@ jsonparse@^1.2.0:
   version "1.3.1"
   resolved "https://registry.npmjs.org/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
 
-jstoxml@^0.2.3:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/jstoxml/-/jstoxml-0.2.4.tgz#ff3fb67856883a032953c7ce8ce7486210f48447"
-  integrity sha1-/z+2eFaIOgMpU8fOjOdIYhD0hEc=
+jstoxml@^2.0.0:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/jstoxml/-/jstoxml-2.2.8.tgz#52e3db627e33120ae4dc328d56ad6ac22132398c"
+  integrity sha512-mZolEZgcxUVjdWNP8J4bTIz/co7KwJq+HwGNHNrwVP/STyaWhnZ32i/fnQcY6ccRWGqb0RjXbAmO26rKs6JgfA==
 
 ko-sleep@^1.0.3:
   version "1.0.3"
