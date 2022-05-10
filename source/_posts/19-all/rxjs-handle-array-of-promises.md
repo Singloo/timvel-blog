@@ -1,6 +1,6 @@
 ---
 title: 使用rxjs来处理一群promise
-date: Tuesday March 5th 2019 12:39:43 pm
+date: 2019-3-5 12:39:43 PM
 tags:
   - rxjs
   - functional programming
