@@ -32,7 +32,7 @@
     "minimist": "^1.2.0",
     "node-fetch": "^2.6.1",
     "rxjs": "^6.6.3",
-    "unsplash-js": "^6.3.0"
+    "unsplash-js": "^7.0.15"
   },
   "devDependencies": {
     "@types/ali-oss": "^6.16.3",

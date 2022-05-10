@@ -17,6 +17,11 @@
   resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
   integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
 
+"@types/content-type@^1.1.3":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@types/content-type/-/content-type-1.1.5.tgz#aa02dca40864749a9e2bf0161a6216da57e3ede5"
+  integrity sha512-dgMN+syt1xb7Hk8LU6AODOfPlvz5z1CbXpPuJE5ZrX9STfBOIXF09pEB8N7a97WT9dbngt3ksDCm6GW6yMrxfQ==
+
 "@types/node@*", "@types/node@^17.0.31":
   version "17.0.31"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.31.tgz#a5bb84ecfa27eec5e1c802c6bbf8139bdb163a5d"
@@ -492,7 +497,7 @@ content-disposition@0.5.3:
   dependencies:
     safe-buffer "5.1.2"
 
-content-type@^1.0.2, content-type@~1.0.4:
+content-type@^1.0.2, content-type@^1.0.4, content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
@@ -1001,11 +1006,6 @@ form-data@~2.3.2:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
-
-form-urlencoded@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/form-urlencoded/-/form-urlencoded-1.2.0.tgz#16ce2cafa76d2e48b9e513ab723228aea5993396"
-  integrity sha1-Fs4sr6dtLki55ROrcjIorqWZM5Y=
 
 formstream@^1.1.0:
   version "1.1.0"
@@ -1697,11 +1697,6 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lodash.get@4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-
 lodash@^4.17.20:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
@@ -2184,16 +2179,6 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
   integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
-querystring@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
-  integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
-
-querystringify@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
-  integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
-
 range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
@@ -2272,11 +2257,6 @@ request@^2.88.2:
     tough-cookie "~2.5.0"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
-
-requires-port@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-  integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
 resolve-url@^0.2.1:
   version "0.2.1"
@@ -2759,15 +2739,13 @@ unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
 
-unsplash-js@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/unsplash-js/-/unsplash-js-6.3.0.tgz#73728146aa90aab3acd382695a1eb2969bc240f5"
-  integrity sha512-AmypERf7MIXYWBdoIYnofgB6DFoZgXhQST+K29T+S4ePVvzYqqrHxfiZosdqvb6Y15h6xCzEd/NqyG+99yk9xA==
+unsplash-js@^7.0.15:
+  version "7.0.15"
+  resolved "https://registry.yarnpkg.com/unsplash-js/-/unsplash-js-7.0.15.tgz#9eee0ce552e2c2ee70fd30a767c59b159e004753"
+  integrity sha512-WGqKp9wl2m2tAUPyw2eMZs/KICR+A52tCaRapzVXWxkA4pjHqsaGwiJXTEW7hBy4Pu0QmP6KxTt2jST3tluawA==
   dependencies:
-    form-urlencoded "1.2.0"
-    lodash.get "4.4.2"
-    querystring "0.2.0"
-    url-parse "1.4.5"
+    "@types/content-type" "^1.1.3"
+    content-type "^1.0.4"
 
 uri-js@^4.2.2:
   version "4.4.1"
@@ -2779,14 +2757,6 @@ uri-js@^4.2.2:
 urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
-
-url-parse@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.5.tgz#04cbb6ba2be682a18e4417fa2245aa7e3dfdcc50"
-  integrity sha512-4XDvC5vZRjEpjP0L4znrWeoH8P8F0XGBlfLdABi/6oV4o8xUVbTpyrxWHxkK2bT0pSIpcjdIzSoWUhlUfawCAQ==
-  dependencies:
-    querystringify "^2.0.0"
-    requires-port "^1.0.0"
 
 urllib@^2.33.1:
   version "2.36.1"
