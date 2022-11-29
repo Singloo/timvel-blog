@@ -17,7 +17,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^11.0.0",
     "hexo": "^6.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
